@@ -1,6 +1,6 @@
 import pandas as pd
 import random
-# 读取文件
+# 读取文件，最开始读取的文件是works.xlsx文件,更改名字。
 df = pd.read_excel(r'C:\Users\\17968\Desktop\work.xlsx')
 # 文件里的名字都是两个字的，需要进一步改善
 df['姓名'] = df['姓名'].apply(lambda x: x[-2:])
