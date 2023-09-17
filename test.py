@@ -32,9 +32,10 @@ if '学历' not in df.columns:
     df['学历'] = df['学历'].apply(lambda x: random.randint(1,3) if x is not None else None) # 这里需要先进行创建列，才能进行这一步的操作，lamba函数不支持赋值，但支持返回值
     df['学历'] = change_digit(df['学历'])
     df['学历'] = df['学历'].apply(lambda x: str(x)+'本')
-# 年龄平均值
+# 年龄平均值 这里有错误！！！！不能二次使用
 df.loc['平均'] = ''
-df['年龄'] = pd.to_numeric(df['年龄'], errors='coerce')
+# 'pd.to_numeric’函数用于将一个Series或DataFrame的数据类型转换为数值类型，'coerce’表示将无法转换的数据设置为NaN。
+df['年龄'] = pd.to_numeric(df['年龄'], errors='coerce') 
 mean = df['年龄'].mean()
 #print(avage)
 df.loc['平均','年龄'] = mean
