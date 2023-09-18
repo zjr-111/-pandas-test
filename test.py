@@ -42,5 +42,7 @@ df.loc['平均','年龄'] = mean
 
 #检查文档文件
 print(df)
+# 检查文档最后几行
+print(df.tail(2))
 # 保存文件
 df.to_excel(r'work.xlsx',index=False)
