@@ -9,3 +9,5 @@ df.to_excel('文件',index=False) 保存后缀为excel文件，如果要保存�
 判断列是否存在：if '标签' not in df.columns：..... df.columns用来获取DataFrame对象的列标签的属性
 lambda函数不支持赋值语句'='，但可以返回值，test.py文件中32行，最后用if判断语句返回x的值
 想进行列的操作时需要先确保对应列是否存在
+'pd.to_numeric’函数用于将一个Series或DataFrame的数据类型转换为数值类型，'coerce’表示将无法转换的数据设置为NaN。
+df.tail(n)文件的最后n行
