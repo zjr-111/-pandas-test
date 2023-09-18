@@ -11,3 +11,10 @@ lambda函数不支持赋值语句'='，但可以返回值，test.py文件中32�
 想进行列的操作时需要先确保对应列是否存在
 'pd.to_numeric’函数用于将一个Series或DataFrame的数据类型转换为数值类型，'coerce’表示将无法转换的数据设置为NaN。
 df.tail(n)文件的最后n行
+2023/9/17
+df.loc['标签']选择行
+df['年龄'] = pd.to_numeric(df['年龄'], errors='coerce') 'pd.to_numeric’函数用于将一个Series或DataFrame的数据类型转换为数值类型，'coerce’表示将无法转换的数据设置为NaN。
+df.iloc[] 和 df.loc[]的作用差不多，iloc是第几行并且可以分片 [：3]就代表前三行，loc是根据标签找所在行
+2023/9/18
+df.index用来获取DataFrame对象的行标签的属性
+df['姓名'].fillna('') 该代码里fillna('')的作用时将姓名列表里的空格填入''
