@@ -39,6 +39,8 @@ df['人群'] = pd.cut(df['年龄'],bins=[0,25,50,70],labels=['青年','中年','
 df['薪资'] = ''
 df['薪资'] = df['薪资'].apply(lambda x: random.randint(3000, 7000) if x is not None else None)
 df['薪资水平'] = pd.cut(df['薪资'],bins=[3000,4000,5000,7000],labels=['小薪','小康','赋予'])
+# 展示高工资的人
+print(df.loc[df['薪资']>6700])
 # 年龄平均值 df.index用来获取DataFrame对象的横标签的属性
 if '平均' not in df.index:    
     df.loc['平均'] = ''
