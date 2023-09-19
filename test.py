@@ -33,6 +33,12 @@ if '学历' not in df.columns:
     df['学历'] = df['学历'].apply(lambda x: random.randint(1,3) if x is not None else None) # 这里需要先进行创建列，才能进行这一步的操作，lamba函数不支持赋值，但支持返回值
     df['学历'] = change_digit(df['学历'])
     df['学历'] = df['学历'].apply(lambda x: str(x)+'本')
+# 所属人群
+df['人群'] = pd.cut(df['年龄'],bins=[0,25,50,70],labels=['青年','中年','老年'])
+# 工资
+df['薪资'] = ''
+df['薪资'] = df['薪资'].apply(lambda x: random.randint(3000, 7000) if x is not None else None)
+df['薪资水平'] = pd.cut(df['薪资'],bins=[3000,4000,5000,7000],labels=['小薪','小康','赋予'])
 # 年龄平均值 df.index用来获取DataFrame对象的横标签的属性
 if '平均' not in df.index:    
     df.loc['平均'] = ''
