@@ -2,6 +2,11 @@ import pandas as pd
 import random
 # 读取文件
 df = pd.read_excel(r'works.xlsx')
+# df_1 = pd.read_excel(r'works.xlsx')
+# 纵合并表格
+# df = pd.concat([df, df_1])
+# 横向合并表格
+# df = pd.merge(df, df_1, how='属性')
 # 创建数字和文字相对应的字典
 digit_dict={
     '1': '一',
@@ -56,9 +61,13 @@ if '平均' not in df.index:
 '''
 #检查文档文件
 print(df)
+print('============================================================')
 # 检查文档最后几行
 print(df.tail(2))
+print('============================================================')
 # 展示高工资的人
 print(df.loc[df['薪资']>6700])
+print('============================================================')
+print(df.loc[df['薪资'] == df['薪资'].max()])
 # 保存文件
 df.to_excel(r'work.xlsx',index=False)
