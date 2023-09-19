@@ -21,8 +21,8 @@ df['姓名'] = df['姓名'].fillna('').apply(lambda x: x[-2:])
 # 检查文件的大概信息
 # print(df.info)
 if '年龄' not in df.columns:    
-    # 随机生成年龄，这里可以改善为自动识别列的长度
-    age = [random.randint(18,70)for i in range(80)]
+    # 随机生成年龄
+    age = [random.randint(18,70)for i in range(len(df['姓名']))]
     # 检查年龄列表
     #print(age)
     # 更新年龄列表
@@ -39,8 +39,12 @@ df['人群'] = pd.cut(df['年龄'],bins=[0,25,50,70],labels=['青年','中年','
 df['薪资'] = ''
 df['薪资'] = df['薪资'].apply(lambda x: random.randint(3000, 7000) if x is not None else None)
 df['薪资水平'] = pd.cut(df['薪资'],bins=[3000,4000,5000,7000],labels=['小薪','小康','赋予'])
-# 展示高工资的人
-print(df.loc[df['薪资']>6700])
+# 平均薪资
+if '平均薪资' not in df.columns:
+    df['平均薪资'] = ''
+    mean = df['薪资'].mean()
+    df.loc[0,'平均薪资'] = mean
+'''
 # 年龄平均值 df.index用来获取DataFrame对象的横标签的属性
 if '平均' not in df.index:    
     df.loc['平均'] = ''
@@ -49,10 +53,12 @@ if '平均' not in df.index:
     mean = df['年龄'].mean()
     #print(mean)
     df.loc['平均','年龄'] = '平均年龄' + str(mean)
-
+'''
 #检查文档文件
 print(df)
 # 检查文档最后几行
 print(df.tail(2))
+# 展示高工资的人
+print(df.loc[df['薪资']>6700])
 # 保存文件
 df.to_excel(r'work.xlsx',index=False)
