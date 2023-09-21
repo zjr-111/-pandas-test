@@ -24,3 +24,5 @@ df['姓名'].fillna('') 该代码里fillna('')的作用时将姓名列表里的�
 放标签的列=pd.cut(需要加标签的依据，判断条件，标签列表)
 两个合并表格的函数  how='inner'保留交集 how='onter'保留并集 how='right'以右边文档为准合并 how='left'以左边为准合并
 df.concat([表格1, 表格2])    df.merge(表格1, 表格2, how='属性')
+2023/9/21
+groupby()函数 进行分组    groupby (标准) [需要分组的列].处理数据的函数
