@@ -18,3 +18,11 @@ sort_index() 排序（原本读取完后是按时间从大到小的顺序排的�
   格式：sort_index(参数ascending)
 pct_change() 计算相较于列表上一条的差值
   格式：表名称['列名'].pct_change()
+std() 计算标准差 (运用前要使用dropna()将存在空值NaN的删除)
+  格式：表名称.std()
+mean() 计算标平均值 (运用前要使用dropna()将存在空值NaN的删除)
+  格式：表名称.mean()
+skew() 计算标偏度 (运用前要使用dropna()将存在空值NaN的删除)
+  格式：skew(表名称)
+hist() 直方图
+  格式：plt.hist()
