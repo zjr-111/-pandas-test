@@ -12,3 +12,9 @@ daily_basic()函数 根据日期返回指标信息
   格式：daily_basic(trade_date='00000000')
 weekly()接口 作用是获取特定股票的每周交易报告
   格式：weekly(ts_code='股票代码',start_date='开始日期',end_date='结束日期')
+daily_basic()接口 作用是按日获取交易报告
+  格式：daily_basic(ts_code='股票代码',start_date='开始日期',end_date='结束日期')
+sort_index() 排序（原本读取完后是按时间从大到小的顺序排的，参数ascending=False是将其反过来）
+  格式：sort_index(参数ascending)
+pct_change() 计算相较于列表上一条的差值
+  格式：表名称['列名'].pct_change()
