@@ -40,3 +40,9 @@ groupby()函数 进行分组    groupby (标准) [需要分组的列].处理数�
 查看重复个数：
   unique()查看不重复内容 nunique()查看不重复个数
   格式：df['标签'].nunique()用print()函数输出
+                                                  2023/10/7
+df.set_index()函数 将其设置为行索引
+  格式：df.set_index('指标',inplace=True)
+df.pct_change(axis=1) 计算增长率  axis=1 参数进行横轴的增长率计算
+fig, ax = plt.subplots(nrows=2, ncols=2) 幕布分组为横2竖2
+  画图时可以使用plot(ax = ax[1])
